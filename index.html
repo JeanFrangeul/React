@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <!--<div class="header container">
+        <h1>Bienvenue sur le site!</h1>
+        <h2>Ce site a été conçu pour:</h2>
+        <ul class="services" id="site-services-list">
+          <li>Obtenir des informations sur la société</li>
+          <li>Echanger avec vos collègues</li>
+          <li>Vous inscrire aux afterwork qui sont organisés</li>
+        </ul>
+      </div>-->
+    </div>
+
+    <script>
+        const elRoot = document.getElementById('root');
+        const elReact = React.createElement(
+            'div',
+            {
+                className: 'header container',
+                children: [
+                    React.createElement(
+                        'h1',
+                        {},
+                        'Bienvenue sur le site!'
+                    ),
+                    React.createElement(
+                        'h2',
+                        {},
+                        'Ce site a été conçu pour:'
+                    ),
+                    React.createElement(
+                        'ul',
+                        {
+                            className: 'services',
+                            id: 'site-service-list',
+                            children: [
+                                React.createElement(
+                                    'li',
+                                    {},
+                                    'Obtenir des informations sur la société'
+                                ),
+                                React.createElement(
+                                    'li',
+                                    {},
+                                    'Echanger avec vos collègues'
+                                ),
+                                React.createElement(
+                                    'li',
+                                    {},
+                                    'Vous inscrire aux afterwork qui sont organisés'
+                                )
+                            ]
+                        }
+                    )
+                ]
+            }
+        )
+
+        ReactDOM.render(elReact, elRoot);
+    </script>
+  </body>
+</html>
