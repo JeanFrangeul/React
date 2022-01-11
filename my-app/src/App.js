@@ -1,25 +1,55 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Button from './Components/Button';
+
 
 function App() {
+
+  /*
+  const [count, setCount] = useState(10);
+
+  const handleClick = (mode) => {
+    if (mode === '-') {
+      setCount(count - 1);
+      return;
+    } else {
+      setCount(count + 1);
+    }
+  }
+  */
+ const handleClick = () => {
+
+ }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <Button
+        label="SenD"
+        backgroundColor="#f0f"
+        isRounded={true}
+        handleClick={handleClick}
+      />
     </div>
-  );
+
+
+    /*
+    <div className="App">
+      <div>
+        <Button
+          label="-"
+          handleClick={() => handleClick('-')}
+        />
+        <Button
+          label="+"
+          handleClick={() => handleClick('+')}
+        />
+      </div>
+      {count}
+    </div>
+    */
+  )
 }
 
 export default App;
