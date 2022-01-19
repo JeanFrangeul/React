@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import './FormInput.css';
 
-class FormInput extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            value: 'Jean'
-        }
+const FormInput = ({label, placeholder}) => {
+    const [inputValue, setInputValue] = useState('Thomas');
+
+    const handleChange = (event) => {
+        setInputValue(event.target.value);
     };
 
-    render() {
-        return (
-            <div>
-                <label>{this.props.label}</label>
-                <input 
-                    type='text'
-                    value={this.state.value}
-                    placeholder={this.props.placeholder}
-                    onChange={(event) => this.setState({value: event.target.value})}
-                />
-            </div>
-        );
-    };
+    return (
+        <div>
+            <label className="LabelInput">
+                {label}
+            </label>
+            <input 
+                type='text'
+                className="Input"
+                value={inputValue}
+                onChange={handleChange}
+                placeholder={placeholder}
+            />
+        </div>
+    );
 };
 
 export default FormInput;
