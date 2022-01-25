@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Todos({ todos, addTodo }) {
+function Todos({ todos, addTodo, emptyTodos }) {
   const [todo, setTodo] = useState('');
 
 
@@ -26,6 +26,11 @@ function Todos({ todos, addTodo }) {
     setTodo('');
   }
 
+  const handleDelete = (event) => {
+    event.preventDefault();
+    emptyTodos();
+  }
+
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -37,6 +42,7 @@ function Todos({ todos, addTodo }) {
           return <li>{todo}</li>
         })}
       </ol>
+      <button onClick={handleDelete} >Delete</button>
     </div>
   );
 }

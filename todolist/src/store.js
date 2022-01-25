@@ -1,24 +1,27 @@
-import { createStore } from 'redux';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+
 
 const initialState = {
     todos: []
 };
 
-const todoReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'ADD_TODO':
-            return {
-                ...state,
-                todos: [
-                    ...state.todos,
-                    action.payload
-                ]
-            }
-        default:
-            return state;
+const todoSlice = createSlice({
+    name: 'todos',
+    initialState: initialState,
+    reducers: {
+        addTodo(state, action) {
+            return {...state, todos: [...state.todos, action.payload]};
+        },
+        emptyTodos(state) {
+            return {...state, todos: []};
+        }
     }
-};
+})
 
-const store = createStore(todoReducer);
+const store = configureStore({
+    reducer: todoSlice.reducer
+});
+
+export const { addTodo, emptyTodos } = todoSlice.actions;
 
 export default store;

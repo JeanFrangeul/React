@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Todos from '../Todos';
+import { addTodo, emptyTodos } from '../store';
 
 const mapStateToProps = state => {
     return {
@@ -9,10 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addTodo: value => dispatch({
-            type: 'ADD_TODO',
-            payload: value
-        })
+        addTodo: value => {dispatch(addTodo(value))},
+        emptyTodos: () => {dispatch(emptyTodos())}
     };
 };
 
